@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop diorama — Spectrum Auto Wiring and Sound</title>
+  <link rel="icon" href="assets/spectrum-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/site.css">
+  <script type="importmap">
+  { "imports": { "three": "https://unpkg.com/three@0.166.1/build/three.module.js", "three/addons/": "https://unpkg.com/three@0.166.1/examples/jsm/" } }
+  </script>
+  <script src="js/shop-env.js"></script>
+  <script src="js/diorama.js" defer></script>
+  <script src="js/diorama-console.js" defer></script>
+</head>
+<body class="page-diorama">
+
+<div style="position:fixed;inset:0;background:#0C0C0D;overflow:hidden">
+  <div style="position:absolute;inset:0">
+    <shop-diorama></shop-diorama>
+  </div>
+
+  <div style="position:absolute;left:0;top:0;padding:clamp(16px,2.4vw,28px);display:flex;flex-direction:column;gap:10px;align-items:flex-start;pointer-events:none">
+    <div data-diorama-brand="" style="display:inline-flex;flex-direction:column;gap:8px;padding:14px 20px 15px;border-radius:3px;background:rgba(9,9,11,0.72);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);box-shadow:0 1px 0 0 rgba(237,234,228,0.07) inset,0 6px 22px rgba(0,0,0,0.34);pointer-events:auto">
+      <span style="font-family:'Newsreader',Georgia,serif;font-size:clamp(22px,2.4vw,30px);font-weight:300;letter-spacing:0.01em;color:#FBFAF7;line-height:1">Spectrum Auto</span>
+      <span style="display:flex;align-items:center;gap:9px">
+        <span style="width:30px;height:2px;background:linear-gradient(90deg,rgba(232,178,58,0.2),#F0CB77 45%,#E8B23A)"></span>
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#E4E0D8;line-height:1">Wiring &amp; Sound</span>
+        <span style="width:30px;height:2px;background:linear-gradient(90deg,#E8B23A,#F0CB77 55%,rgba(232,178,58,0.2))"></span>
+      </span>
+      <span style="align-self:center;font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:12.5px;letter-spacing:0.01em;color:#ADA79D;line-height:1">Music is our profession</span>
+    </div>
+
+    <div data-console style="display:none">
+      <div style="width:262px;max-height:calc(100vh - 150px);overflow-y:auto;display:flex;flex-direction:column;gap:16px;padding:16px 18px 18px;border-radius:3px;background:rgba(9,9,11,0.78);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);box-shadow:0 1px 0 0 rgba(237,234,228,0.07) inset,0 6px 22px rgba(0,0,0,0.34);pointer-events:auto">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#FBDE9A">↑↑↓↓←→←→BA</span>
+          <button type="button" data-action="reset" style="padding:0;border:0;background:none;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#B9B3A9;cursor:pointer" class="hv-v9rel">Live</button>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#ADA79D">Time of day</span>
+          <div style="display:flex;flex-wrap:wrap;gap:6px">
+            
+              <button type="button" data-opt="day:live" style="padding:6px 9px;border:1px solid rgba(232,178,58,0.55);border-radius:2px;background:rgba(232,178,58,0.16);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#F0CB77;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Live</button>
+            
+              <button type="button" data-opt="day:dawn" style="padding:6px 9px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Dawn</button>
+            
+              <button type="button" data-opt="day:morning" style="padding:6px 9px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Morning</button>
+            
+              <button type="button" data-opt="day:midday" style="padding:6px 9px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Midday</button>
+            
+              <button type="button" data-opt="day:golden" style="padding:6px 9px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Golden</button>
+            
+              <button type="button" data-opt="day:dusk" style="padding:6px 9px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Dusk</button>
+            
+              <button type="button" data-opt="day:night" style="padding:6px 9px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Night</button>
+            
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#ADA79D">Weather</span>
+          <div style="display:flex;flex-wrap:wrap;gap:6px">
+            
+              <button type="button" data-opt="wx:live" style="padding:6px 9px;border:1px solid rgba(232,178,58,0.55);border-radius:2px;background:rgba(232,178,58,0.16);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#F0CB77;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Live</button>
+            
+              <button type="button" data-opt="wx:clear" style="padding:6px 9px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Clear</button>
+            
+              <button type="button" data-opt="wx:overcast" style="padding:6px 9px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Overcast</button>
+            
+              <button type="button" data-opt="wx:rain" style="padding:6px 9px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Rain</button>
+            
+              <button type="button" data-opt="wx:snow" style="padding:6px 9px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Snow</button>
+            
+              <button type="button" data-opt="wx:fog" style="padding:6px 9px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Fog</button>
+            
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#ADA79D">Intensity</span>
+          <div style="display:flex;gap:6px">
+            
+              <button type="button" data-opt="rate:calm" style="flex:1;padding:6px 9px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Calm</button>
+            
+              <button type="button" data-opt="rate:steady" style="flex:1;padding:6px 9px;border:1px solid rgba(232,178,58,0.55);border-radius:2px;background:rgba(232,178,58,0.16);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#F0CB77;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Steady</button>
+            
+              <button type="button" data-opt="rate:heavy" style="flex:1;padding:6px 9px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;transition:border-color 140ms ease,background 140ms ease">Heavy</button>
+            
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#ADA79D">Holiday</span>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px">
+            
+              <button type="button" data-opt="hol:live" style="padding:6px 8px;border:1px solid rgba(232,178,58,0.55);border-radius:2px;background:rgba(232,178,58,0.16);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#F0CB77;cursor:pointer;text-align:center;line-height:1.3;transition:border-color 140ms ease,background 140ms ease">Live</button>
+            
+              <button type="button" data-opt="hol:none" style="padding:6px 8px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;text-align:center;line-height:1.3;transition:border-color 140ms ease,background 140ms ease">None</button>
+            
+              <button type="button" data-opt="hol:newyear" style="padding:6px 8px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;text-align:center;line-height:1.3;transition:border-color 140ms ease,background 140ms ease">New Year</button>
+            
+              <button type="button" data-opt="hol:valentines" style="padding:6px 8px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;text-align:center;line-height:1.3;transition:border-color 140ms ease,background 140ms ease">Valentine</button>
+            
+              <button type="button" data-opt="hol:stpatricks" style="padding:6px 8px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;text-align:center;line-height:1.3;transition:border-color 140ms ease,background 140ms ease">St Patrick</button>
+            
+              <button type="button" data-opt="hol:easter" style="padding:6px 8px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;text-align:center;line-height:1.3;transition:border-color 140ms ease,background 140ms ease">Easter</button>
+            
+              <button type="button" data-opt="hol:memorial" style="padding:6px 8px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;text-align:center;line-height:1.3;transition:border-color 140ms ease,background 140ms ease">Memorial</button>
+            
+              <button type="button" data-opt="hol:july4" style="padding:6px 8px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;text-align:center;line-height:1.3;transition:border-color 140ms ease,background 140ms ease">July 4</button>
+            
+              <button type="button" data-opt="hol:labor" style="padding:6px 8px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;text-align:center;line-height:1.3;transition:border-color 140ms ease,background 140ms ease">Labor</button>
+            
+              <button type="button" data-opt="hol:halloween" style="padding:6px 8px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;text-align:center;line-height:1.3;transition:border-color 140ms ease,background 140ms ease">Halloween</button>
+            
+              <button type="button" data-opt="hol:veterans" style="padding:6px 8px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;text-align:center;line-height:1.3;transition:border-color 140ms ease,background 140ms ease">Veterans</button>
+            
+              <button type="button" data-opt="hol:thanksgiving" style="padding:6px 8px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;text-align:center;line-height:1.3;transition:border-color 140ms ease,background 140ms ease">Thanksgiving</button>
+            
+              <button type="button" data-opt="hol:christmas" style="padding:6px 8px;border:1px solid rgba(237,234,228,0.14);border-radius:2px;background:rgba(237,234,228,0.04);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B9B3A9;cursor:pointer;text-align:center;line-height:1.3;transition:border-color 140ms ease,background 140ms ease">Christmas</button>
+            
+          </div>
+        </div>
+
+        <span style="font-family:'Archivo',system-ui,sans-serif;font-size:11px;line-height:1.5;color:#ADA79D" data-hint>Pin an hour or a condition, or leave both on Live to follow Papillion in real time. Enter the code again to close.</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute;right:0;bottom:0;padding:clamp(16px,2.4vw,28px);pointer-events:none">
+    <div style="display:inline-flex;flex-direction:column;align-items:flex-end;gap:12px;padding:16px 20px;border-radius:3px;background:rgba(9,9,11,0.72);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);box-shadow:0 1px 0 0 rgba(237,234,228,0.07) inset,0 6px 22px rgba(0,0,0,0.34)">
+      <div style="display:flex;align-items:baseline;gap:12px">
+        <span data-diorama-phase="" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#FBDE9A">—</span>
+        <span data-diorama-clock="" style="font-family:'Newsreader',Georgia,serif;font-size:30px;font-weight:300;letter-spacing:0.02em;color:#FBFAF7;line-height:1;font-variant-numeric:tabular-nums">--:--</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:10px">
+        <span data-diorama-condition="" style="font-family:'Archivo',system-ui,sans-serif;font-size:13px;color:#F0EDE7">Loading…</span>
+        <span data-diorama-temp="" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;color:#E4E0D8;font-variant-numeric:tabular-nums"></span>
+      </div>
+      <span data-diorama-source="" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#DBD6CC">Live · Papillion, NE</span>
+      <div style="display:flex;gap:18px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#DBD6CC">
+        <span>Drag to orbit</span>
+        <span>Scroll to zoom</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
