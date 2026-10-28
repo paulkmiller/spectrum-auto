@@ -1,0 +1,39 @@
+/* Spectrum Auto Wiring & Sound — site styles.
+   Layout styling is inline in each page's markup (carried over 1:1 from the approved
+   designs). This file holds what inline styles can't: resets, the header's scroll states,
+   and hover/focus states. The pseudo-state classes use !important because inline
+   styles outrank any class rule; drop it once a block's inline styles move in here. */
+
+html { background: #0c0c0d; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: #0c0c0d; color: #edeae4; font-family: 'Archivo', system-ui, sans-serif; }
+* { box-sizing: border-box; }
+a { color: #e8b23a; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: #f0cb77; }
+::selection { background: #c9a227; color: #12100b; }
+@keyframes riseIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* Full-screen diorama page */
+.page-diorama, html:has(.page-diorama) { height: 100%; }
+.page-diorama { overflow: hidden; }
+
+/* Header: solid by default. On the home page (data-overlay) it floats clear over the
+   hero until js/site.js adds .is-solid once the hero has scrolled past. */
+.site-header {
+  background: rgba(12, 12, 13, 0.9);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(237, 234, 228, 0.1);
+  transition: background 260ms ease, border-color 260ms ease, backdrop-filter 260ms ease;
+}
+[data-overlay]:not(.is-solid) .site-header {
+  background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; border-bottom-color: transparent;
+}
+[data-nav] a[aria-current='page'] { color: #e8b23a !important; box-shadow: inset 0 -1px 0 0 #c9a227; }
+
+/* Hover / focus states */
+.hv-17olc:hover { border-color:#C9A227 !important; color:#E8B23A !important; }
+.hv-1t71x:hover { background:#151517 !important; }
+.hv-1ye59:hover { color:#F0CB77 !important; }
+.hv-2fw08:hover { background:#E8B23A !important; }
+.hv-p1v37:hover { background:#18181B !important; }
+.hv-v9rel:hover { color:#E8B23A !important; }
+.hv-yl4ni:hover { color:#EDEAE4 !important; }

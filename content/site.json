@@ -1,0 +1,131 @@
+{
+  "_comment": "Canonical content source. Every field here maps 1:1 to a Contentful content type + field (see content/MODEL.md). The static HTML pages ship with this content baked in; cms/hydrate.js overlays this file (or a Contentful CDN payload) at runtime onto any [data-cms] node.",
+
+  "settings": {
+    "name": "Spectrum Auto Wiring and Sound",
+    "shortName": "Spectrum",
+    "owner": "Sean Slattery",
+    "ownerRole": "Owner · Installer · Fabricator",
+    "tagline": "Mobile electronics, done right the first time.",
+    "phone": "402-699-7400",
+    "phoneHref": "tel:+14026997400",
+    "smsHref": "sms:+14026997400",
+    "email": "spectrumautowiringandsound@gmail.com",
+    "street": "1115 Applewood Drive #3",
+    "city": "Papillion",
+    "state": "NE",
+    "zip": "68046",
+    "hours": "By appointment — evenings and weekends available",
+    "bookingUrl": "https://calendly.com/spectrumautowiringandsound/consultation",
+    "facebook": "https://www.facebook.com/p/Spectrum-Auto-Wiring-and-Sound-61581027636924/",
+    "instagram": "https://www.instagram.com/spectrumautowiringandsound/",
+    "serviceArea": "Papillion, La Vista, Bellevue, Omaha and the rest of Sarpy County"
+  },
+
+  "announcement": {
+    "enabled": false,
+    "text": "Booking into next month — call for a same-week consultation slot.",
+    "linkLabel": "Book a consult",
+    "linkUrl": "Contact.dc.html",
+    "tone": "brass"
+  },
+
+  "hero": {
+    "eyebrow": "Papillion, Nebraska · Single-member shop",
+    "headline": "One set of hands. Every amplifier on a scope.",
+    "sub": "I'm a one-man mobile electronics shop. I sit down with you before I ever touch a panel, I build to your goals instead of a catalog, and I measure everything I hand back to you.",
+    "primaryCtaLabel": "Call 402-699-7400",
+    "secondaryCtaLabel": "Text a photo of your car"
+  },
+
+  "standard": [
+    { "label": "01", "title": "Deadened and sealed as standard", "body": "Every speaker installation includes basic sound deadening and foam rings that seal the driver to the door panel. Not an upsell — it's the only way the speaker you paid for actually performs." },
+    { "label": "02", "title": "Boxes modeled, not guessed", "body": "Custom enclosures are properly designed, modeled and tuned to your taste. I'll show you the model and the response target before I cut a single sheet of MDF." },
+    { "label": "03", "title": "Every amplifier tuned with an oscilloscope", "body": "Gains set by ear or by knob position are how speakers die. I set them on a scope, at the clipping threshold, with your source material." },
+    { "label": "04", "title": "Every DSP gets a real measured tune", "body": "Time alignment, crossovers and EQ done with the best measurement equipment I can get my hands on — not a factory preset with a smiley curve." }
+  ],
+
+  "services": [
+    { "slug": "speakers", "title": "Speaker & component installs", "blurb": "Coax, components, three-ways. Deadening and sealed foam rings included on every one.", "featured": true },
+    { "slug": "amplifiers", "title": "Amplifiers & oscilloscope tuning", "blurb": "Sized to the load, wired to spec, and every gain set on a scope before it leaves.", "featured": true },
+    { "slug": "dsp", "title": "DSP tuning & measurement", "blurb": "Time alignment, crossover work and measured EQ using proper acoustic measurement gear.", "featured": true },
+    { "slug": "enclosures", "title": "Custom subwoofer enclosures", "blurb": "Modeled to your target response and built to fit your vehicle, not a generic box size.", "featured": true },
+    { "slug": "fabrication", "title": "3D-printed & bespoke fabrication", "blurb": "Scanned, modeled and printed parts for things nobody makes a bracket for.", "featured": true },
+    { "slug": "deadening", "title": "Sound deadening", "blurb": "Doors, floors, trunk, roof. Road noise down, midbass up, rattles gone.", "featured": false },
+    { "slug": "remote-start", "title": "Remote start & security", "blurb": "Clean, documented installs on modern CAN-bus vehicles. No cut corners at the ignition harness.", "featured": false },
+    { "slug": "wiring", "title": "Wiring repair & troubleshooting", "blurb": "Someone else's melted mess, a phantom draw, an aftermarket install gone wrong. This is the work I like most.", "featured": false },
+    { "slug": "head-units", "title": "Head units, CarPlay & Android Auto", "blurb": "Retaining steering wheel controls, factory cameras and chimes — properly integrated." , "featured": false },
+    { "slug": "lighting", "title": "Lighting", "blurb": "Interior, underglow, off-road and accent lighting, fused and switched like it came that way.", "featured": false },
+    { "slug": "dashcams", "title": "Dash cams & radar", "blurb": "Hardwired, hidden, and set up so you never think about it again.", "featured": false }
+  ],
+
+  "builds": [
+    { "slug": "caddy-door-pods", "title": "3D-printed bolt-on door pods", "vehicle": "Cadillac", "imageId": "build-caddy", "summary": "Printed from a 3D scan of the door panel. They form to the curvature of the door, aim the speaker more on-axis with the listener, and bolt on without permanent modification to the factory panel.", "tags": ["3D printing", "Scanning", "Components"] },
+    { "slug": "modeled-enclosure", "title": "Modeled and tuned enclosure", "vehicle": "Build in progress", "imageId": "build-enclosure", "summary": "Designed around the vehicle's usable volume and the customer's taste in low end, then verified against the model once it was in the car.", "tags": ["Enclosure design", "Modeling"] },
+    { "slug": "scope-tuned-amp", "title": "Amplifier rack, scoped and set", "vehicle": "Build in progress", "imageId": "build-amp", "summary": "Every gain set on the oscilloscope at the clipping threshold with real source material, then documented so the next person to touch it knows what they're looking at.", "tags": ["Amplifiers", "Measurement"] },
+    { "slug": "wiring-rescue", "title": "Wiring rescue", "vehicle": "Build in progress", "imageId": "build-wiring", "summary": "Undoing an install that was done fast instead of right. Re-terminated, re-fused, re-routed, and labeled.", "tags": ["Troubleshooting", "Repair"] }
+  ],
+
+  "process": [
+    { "step": "01", "title": "Consultation, in person", "body": "We sit in your car. I want to hear what bothers you about it now and what you want it to sound like — and I'll go as far in-depth as you have patience for. Nothing gets quoted from a photo and a guess." },
+    { "step": "02", "title": "A plan and a real number", "body": "Equipment options at a few price points, what the labor actually involves, and where I'd spend your money first. If something you want isn't worth it, I'll tell you that too." },
+    { "step": "03", "title": "Design and fabrication", "body": "Enclosures get modeled. Brackets, pods and adapters get scanned and printed. You see the design before it's built." },
+    { "step": "04", "title": "Install, measure, tune", "body": "Panels off, deadening and foam rings in, wiring routed and fused properly. Amps set on the scope, DSP tuned with measurement gear." },
+    { "step": "05", "title": "Handoff", "body": "We listen to it together. I'll walk you through what's in the car and how it's set, and adjust the tune to your taste — that's included, not a return visit fee." }
+  ],
+
+  "fabrication": {
+    "headline": "If nobody makes the part, I'll make the part.",
+    "body": "A lot of what limits a car audio install isn't the equipment — it's that no company sells the bracket, pod, trim ring or adapter your specific vehicle needs. I run 3D printers and scan the panels I'm working with, so the answer to \"can you make it fit?\" is usually yes.",
+    "capabilities": [
+      { "title": "3D scanning", "body": "Scan the factory panel so parts are designed against real geometry instead of measurements and hope." },
+      { "title": "Modeling", "body": "Pods, adapter rings, brackets, trim pieces and mounts designed for your car and your driver." },
+      { "title": "Printing", "body": "Printed in-house, so a revision is a day, not a supplier lead time." },
+      { "title": "Finishing", "body": "Wrapped, textured or painted to sit alongside factory trim without shouting about it." }
+    ]
+  },
+
+  "about": {
+    "headline": "Why the shop works this way",
+    "paragraphs": [
+      "Spectrum is a very small single-member shop — me, Sean Slattery. When you call, you're talking to the person who will be doing the work on your car, and when you pick it up, you're talking to him again.",
+      "I'm not interested in quick turnarounds, canned prefabricated solutions, or large profits. I believe in doing everything right, even if it takes longer. That's the whole business model — the value in what I charge comes out of labor and care, not markup on a box.",
+      "The shop is a garage bay in an industrial park in Papillion, alongside a row of other trades. It isn't a showroom, and it isn't trying to be. What's in it is measurement equipment, 3D printers, and the time to use them properly."
+    ],
+    "background": [
+      "I grew up around this. My dad was an industrial engineer and a sound guy before he moved into finance, and a serious car guy on top of it — deep into music and home audio. He and I built guitar amplifiers together, and I was reading schematics and learning basic electrical physics well before I was old enough to drive.",
+      "Cars caught me late in high school and car audio hooked me immediately. I started as an installer at Best Buy, worked up from the bottom, and ran my own install bay there for several years — picking up bench time at Inphase and Heartland Audio along the way.",
+      "From there, a handful of years at Stereo West: three at the Elkhorn branch until it closed, then install bay manager at the main store. Between that pace and stretches away on Army Reserve duty, I moved to Heartland Audio full time for a steadier schedule — and used that stretch to build this business. Spectrum opened its doors in November.",
+      "CAD I learned because I had to. It became central to this industry a few years ago, and the bigger shops can afford to employ independent designers — I can't, so I taught myself. It has turned into the part of the job I like most."
+    ],
+    "career": [
+      { "place": "Spectrum Auto Wiring and Sound", "role": "Owner" },
+      { "place": "Heartland Audio", "role": "Installer" },
+      { "place": "Stereo West Autotoys", "role": "Install bay manager" },
+      { "place": "Inphase Car Audio", "role": "Installer" },
+      { "place": "Best Buy", "role": "Ran the install bay" },
+      { "place": "U.S. Army Reserve", "role": "Reservist" }
+    ],
+    "pullQuote": "We believe in doing everything right, even if it takes longer.",
+    "portraitId": "about-portrait"
+  },
+
+  "testimonials": [],
+
+  "faq": [
+    { "q": "Do I need an appointment?", "a": "Yes. It's a one-man shop, and the consultation is a real sit-down conversation rather than a counter transaction. Call or text and we'll find a time." },
+    { "q": "Why does an install here take longer than at a big shop?", "a": "Because the panels come all the way off, the deadening and foam rings go in, the wiring is routed and fused properly, and the system gets measured and tuned before you get the keys back. Those steps are where the sound actually comes from." },
+    { "q": "Can you work on equipment I already bought?", "a": "Usually, yes. Bring it or send me a photo of what you have and I'll tell you honestly whether it's worth installing." },
+    { "q": "Can you fix an install someone else did?", "a": "That's some of my favorite work. Send photos of what you're dealing with." },
+    { "q": "What does it cost?", "a": "Labor is where the value is, so pricing depends on the vehicle and how far you want to take it. You'll get a real number after the consultation, not a range designed to get you in the door." },
+    { "q": "Do you do anything besides audio?", "a": "Yes — remote start, security, lighting, dash cams, and general 12-volt wiring diagnosis and repair." },
+    { "q": "Where are you?", "a": "1115 Applewood Drive #3 in Papillion, in the industrial park off Applewood. Look for the unit number — it's a garage bay, not a storefront." }
+  ],
+
+  "pricingNote": "Every job is quoted after an in-person consultation. Labor is the majority of what you pay for, and it's the part that determines whether the equipment performs.",
+
+  "seo": {
+    "titleSuffix": "Spectrum Auto Wiring and Sound — Papillion, NE",
+    "description": "Single-member car audio and 12-volt shop in Papillion, Nebraska. Oscilloscope-tuned amplifiers, measured DSP tuning, modeled enclosures and 3D-printed custom fabrication."
+  }
+}
